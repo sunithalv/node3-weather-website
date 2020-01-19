@@ -8,7 +8,9 @@ const forecasting = (latitude,longitude,callback) => {
             callback('No matching results', undefined)
         } else {
             callback(undefined, body.daily.data[0].summary + 'It is currently ' + body.currently.temperature +
-                ' degrees out and there is ' + body.currently.precipProbability + '% chance of rain');       
+                ' degrees out and there is ' + body.currently.precipProbability + '% chance of rain.'+
+                'The highest temperature is estimated to be '+body.daily.data[0].temperatureHigh+
+                ' and the lowest temperature is estimated to be '+body.daily.data[0].temperatureLow);       
         }
     })
 
